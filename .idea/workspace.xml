@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fffb006a-b865-465a-9013-b195a086176b" name="Changes" comment="Fix typo and add finals">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies-refactor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/movies-refactor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CustomerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CustomerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/StatementBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/StatementBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702929069383</updated>
-      <workItem from="1702930205435" duration="873000" />
+      <workItem from="1702930205435" duration="1170000" />
     </task>
     <servers />
   </component>
