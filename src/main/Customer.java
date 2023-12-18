@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Customer {
 
-    private String name;
-    private List<Rental> rentals;
+    private final String name;
+    private final List<Rental> rentals;
 
     public Customer(String name) {
         this.name = name;
@@ -43,7 +43,7 @@ public class Customer {
                 case Movie.NEW_RELEASE:
                     thisAmount += 3;
                     break;
-                case Movie.CHILDRENS:
+                case Movie.CHILDREN:
                     thisAmount += 1.5;
                     if (each.getDaysRented() > 3) {
                         thisAmount += (each.getDaysRented() - 1) * 1.5;

@@ -6,8 +6,8 @@ import java.util.List;
 public class StatementBuilder {
 
 	private String customerName;
-	private List<String> movieNames;
-	private List<Double> amounts;
+	private final List<String> movieNames;
+	private final List<Double> amounts;
 	private double totalAmount = 0;
 	private int frequentRenterPoints = 0;
 

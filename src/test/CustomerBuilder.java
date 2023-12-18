@@ -9,7 +9,7 @@ import java.util.List;
 class CustomerBuilder {
 
 	private String name;
-	private List<Rental> rentals;
+	private final List<Rental> rentals;
 
 	CustomerBuilder() {
 		rentals = new ArrayList<Rental>();

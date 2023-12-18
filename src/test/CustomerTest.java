@@ -3,8 +3,7 @@ package test;
 import main.Customer;
 import main.Movie;
 import main.Rental;
-import org.junit.jupiter.api.Test;
-import test.CustomerBuilder;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -114,7 +113,7 @@ public class CustomerTest {
 	@Test
 	public void childrensRental1DayTest() {
 		String movieName = "movieName";
-		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDRENS).build();
+		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
 		String customerName = "customerName";
 		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
@@ -129,7 +128,7 @@ public class CustomerTest {
 	@Test
 	public void childrensRental3DayTest() {
 		String movieName = "movieName";
-		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDRENS).build();
+		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
 		String customerName = "customerName";
 		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
@@ -144,7 +143,7 @@ public class CustomerTest {
 	@Test
 	public void childrensRental4DayTest() {
 		String movieName = "movieName";
-		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDRENS).build();
+		Movie movie = new MovieBuilder().title(movieName).priceCode(Movie.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
 		String customerName = "customerName";
 		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
@@ -167,7 +166,7 @@ public class CustomerTest {
 		Rental newReleaseRental = new RentalBuilder().movie(newReleaseMovie).daysRented(10).build();
 
 		String childrensMovieName = "childrensMovieName";
-		Movie childrensMovie = new MovieBuilder().title(childrensMovieName).priceCode(Movie.CHILDRENS).build();
+		Movie childrensMovie = new MovieBuilder().title(childrensMovieName).priceCode(Movie.CHILDREN).build();
 		Rental childrensRental = new RentalBuilder().movie(childrensMovie).daysRented(10).build();
 
 		String customerName = "customerName";

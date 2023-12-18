@@ -1,11 +1,9 @@
 package main;
 
-import main.Movie;
-
 public class Rental {
 
-    private Movie movie;
-    private int daysRented;
+    private final Movie movie;
+    private final int daysRented;
 
     public Rental(Movie movie, int daysRented) {
         this.movie = movie;
