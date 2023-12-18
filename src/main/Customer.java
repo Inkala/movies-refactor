@@ -29,7 +29,7 @@ public class Customer {
         String result = "Rental Record for " + this.getName() + "\n";
         while (rentals.hasNext()) {
             Rental rental = rentals.next();
-            double thisAmount = getMovieAmount(rental);
+            double amount = getMovieAmount(rental);
 
             // add frequent renter points
             frequentRenterPoints++;
@@ -38,8 +38,8 @@ public class Customer {
                 frequentRenterPoints++;
             }
             // show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(amount) + "\n";
+            totalAmount += amount;
         }
         // add footer lines
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
@@ -48,26 +48,26 @@ public class Customer {
     }
 
     private double getMovieAmount(Rental rental) {
-        double thisAmount = 0;
+        double amount = 0;
 
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += 2;
+                amount += 2;
                 if (rental.getDaysRented() > 2) {
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
+                    amount += (rental.getDaysRented() - 2) * 1.5;
                 }
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += 3;
+                amount += 3;
                 break;
             case Movie.CHILDREN:
-                thisAmount += 1.5;
+                amount += 1.5;
                 if (rental.getDaysRented() > 3) {
-                    thisAmount += (rental.getDaysRented() - 1) * 1.5;
+                    amount += (rental.getDaysRented() - 1) * 1.5;
                 }
                 break;
         }
-        return thisAmount;
+        return amount;
     }
 
 }
