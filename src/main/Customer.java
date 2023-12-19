@@ -33,7 +33,7 @@ public class Customer {
             frequentRenterPoints += rental.getFrequentRenterPoints();
 
             statement.addRental(rental);
-            totalAmount += rental.getMovieAmount();
+            totalAmount += rental.getPrice();
         }
         // add footer lines
         String message = statement.getMessage();

@@ -12,7 +12,7 @@ public class Statement {
     }
 
     public void addRental(Rental rental) {
-        double price = rental.getMovieAmount();
+        double price = rental.getPrice();
         message
                 .append("\t")
                 .append(rental.getMovie().getTitle())
