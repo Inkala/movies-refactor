@@ -1,12 +1,12 @@
 package main;
 
-public class Statement {
+public class CustomerStatement {
 
     private final StringBuilder message = new StringBuilder();
     private double totalPrice = 0;
     private int totalFrequentRenterPoints = 0;
 
-    public Statement(String customerName) {
+    public CustomerStatement(String customerName) {
         message
                 .append(String.format("Rental Record for %s", customerName))
                 .append("\n");
