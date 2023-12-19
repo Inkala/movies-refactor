@@ -9,8 +9,12 @@ public class Movie {
         this.movieType = movieType;
     }
 
-    public MovieType getMovieType() {
-        return movieType;
+    public double getPrice(int daysRented) {
+        return movieType.getPrice(daysRented);
+    }
+
+    public int getFrequentRenterPoints(int daysRented) {
+        return movieType.getFrequentRenterPoints(daysRented);
     }
 
     public void setMovieType(MovieType movieType) {

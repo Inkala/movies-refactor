@@ -15,15 +15,11 @@ public class Rental {
     }
 
     public double getMovieAmount() {
-        return this.getMovie().getMovieType().getPrice(this.daysRented);
+        return this.getMovie().getPrice(daysRented);
     }
 
     public int getFrequentRenterPoints() {
-        int rentalPoints = 1;
-        if ((this.getMovie().getMovieType() == MovieType.NEW_RELEASE) && this.daysRented > 1) {
-            rentalPoints++;
-        }
-        return rentalPoints;
+        return this.getMovie().getFrequentRenterPoints(daysRented);
     }
 
 }

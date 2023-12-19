@@ -4,6 +4,10 @@ public enum MovieType {
     REGULAR {
         private double basePrice = 2;
 
+        public int getFrequentRenterPoints(int daysRented) {
+            return 1;
+        }
+
         @Override
         public double getPrice(int daysRented) {
             double price = this.basePrice;
@@ -15,6 +19,11 @@ public enum MovieType {
     },
     NEW_RELEASE {
         private final double basePrice = 3;
+
+        public int getFrequentRenterPoints(int daysRented) {
+            return 2;
+        }
+
         @Override
         public double getPrice(int daysRented) {
             return this.basePrice;
@@ -22,6 +31,11 @@ public enum MovieType {
     },
     CHILDREN {
         private final double basePrice = 1.5;
+
+        @Override
+        public int getFrequentRenterPoints(int daysRented) {
+            return 1;
+        }
 
         @Override
         public double getPrice(int daysRented) {
@@ -34,5 +48,7 @@ public enum MovieType {
     };
 
     protected final double pricePerExtraDay = 1.5;
+
+    public abstract int getFrequentRenterPoints(int daysRented);
     public abstract double getPrice(int daysRented);
 }
