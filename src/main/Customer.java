@@ -24,12 +24,9 @@ public class Customer {
 
     public String statement() {
         Iterator<Rental> rentals = this.rentals.iterator();
-        Statement statement = new Statement(this.getName());
 
-        while (rentals.hasNext()) {
-            Rental rental = rentals.next();
-            statement.addRental(rental);
-        }
+        Statement statement = new Statement(this.getName());
+        rentals.forEachRemaining(statement::addRental);
 
         return statement.getMessage();
     }
