@@ -30,9 +30,8 @@ public class Customer {
 
         while (rentals.hasNext()) {
             Rental rental = rentals.next();
-            double amount = getMovieAmount(rental);
+            double amount = rental.getMovieAmount();
             frequentRenterPoints += getFrequentRenterPoints(rental);
-
 
             // show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(amount) + "\n";
@@ -42,29 +41,6 @@ public class Customer {
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
-    }
-
-    private double getMovieAmount(Rental rental) {
-        double amount = 0;
-
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                amount += 2;
-                if (rental.getDaysRented() > 2) {
-                    amount += (rental.getDaysRented() - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                amount += 3;
-                break;
-            case Movie.CHILDREN:
-                amount += 1.5;
-                if (rental.getDaysRented() > 3) {
-                    amount += (rental.getDaysRented() - 1) * 1.5;
-                }
-                break;
-        }
-        return amount;
     }
 
     private static int getFrequentRenterPoints(Rental rental) {
