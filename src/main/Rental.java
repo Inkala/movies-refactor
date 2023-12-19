@@ -23,16 +23,16 @@ public class Rental {
 
         switch (this.getMovie().getMovieType()) {
             case REGULAR:
-                amount += 2;
+                amount += this.getMovie().getMovieType().getBasePrice();
                 if (this.getDaysRented() > 2) {
                     amount += (this.getDaysRented() - 2) * 1.5;
                 }
                 break;
             case NEW_RELEASE:
-                amount += 3;
+                amount += this.getMovie().getMovieType().getBasePrice();
                 break;
             case CHILDREN:
-                amount += 1.5;
+                amount += this.getMovie().getMovieType().getBasePrice();
                 if (this.getDaysRented() > 3) {
                     amount += (this.getDaysRented() - 1) * 1.5;
                 }
