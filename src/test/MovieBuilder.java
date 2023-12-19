@@ -1,11 +1,12 @@
 package test;
 
 import main.Movie;
+import main.MovieType;
 
 class MovieBuilder {
 
 	private String title;
-	private int priceCode;
+	private MovieType movieType;
 
 	MovieBuilder() {
 		title = "movieName";
@@ -16,13 +17,13 @@ class MovieBuilder {
 		return this;
 	}
 
-	MovieBuilder priceCode(int priceCode) {
-		this.priceCode = priceCode;
+	MovieBuilder movieType(MovieType movieType) {
+		this.movieType = movieType;
 		return this;
 	}
 
 	Movie build() {
-		return new Movie(title, priceCode);
+		return new Movie(title, movieType);
 	}
 
 }
