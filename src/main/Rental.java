@@ -10,10 +10,6 @@ public class Rental {
         this.daysRented = daysRented;
     }
 
-    public int getDaysRented() {
-        return daysRented;
-    }
-
     public Movie getMovie() {
         return movie;
     }
@@ -24,7 +20,7 @@ public class Rental {
 
     public int getFrequentRenterPoints() {
         int rentalPoints = 1;
-        if ((this.getMovie().getMovieType() == MovieType.NEW_RELEASE) && this.getDaysRented() > 1) {
+        if ((this.getMovie().getMovieType() == MovieType.NEW_RELEASE) && this.daysRented > 1) {
             rentalPoints++;
         }
         return rentalPoints;
