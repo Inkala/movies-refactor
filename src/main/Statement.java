@@ -8,8 +8,7 @@ public class Statement {
 
     public Statement(String customerName) {
         message
-                .append("\"Rental Record for \"")
-                .append(customerName)
+                .append(String.format("Rental Record for %s", customerName))
                 .append("\n");
     }
 
@@ -18,21 +17,15 @@ public class Statement {
         totalPrice += price;
         totalFrequentRenterPoints = rental.getFrequentRenterPoints();
         message
-                .append("\t")
-                .append(rental.getTitle())
-                .append("\t")
-                .append(price)
+                .append(String.format("\t%s\t%,.2f", rental.getTitle(), price))
                 .append("\n");
     }
 
     public String getMessage() {
         return message
-                .append("Amount owed is ")
-                .append(totalPrice)
+                .append(String.format("Amount owed is %,.2f", totalPrice))
                 .append("\n")
-                .append("Amount owed is ")
-                .append(totalFrequentRenterPoints)
-                .append(" frequent renter points")
+                .append(String.format("Amount owed is %d frequent renter points", totalFrequentRenterPoints))
                 .toString();
     }
 }
