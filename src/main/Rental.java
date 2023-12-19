@@ -10,16 +10,16 @@ public class Rental {
         this.daysRented = daysRented;
     }
 
-    public Movie getMovie() {
+    public Movie getTitle() {
         return movie;
     }
 
     public double getPrice() {
-        return this.getMovie().getPrice(daysRented);
+        return movie.getPrice(daysRented);
     }
 
     public int getFrequentRenterPoints() {
-        return this.getMovie().getFrequentRenterPoints(daysRented);
+        return movie.getFrequentRenterPoints(daysRented);
     }
 
 }

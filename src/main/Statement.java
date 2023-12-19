@@ -15,7 +15,7 @@ public class Statement {
         double price = rental.getPrice();
         message
                 .append("\t")
-                .append(rental.getMovie().getTitle())
+                .append(rental.getTitle())
                 .append("\t")
                 .append(price)
                 .append("\n");
