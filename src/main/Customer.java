@@ -23,23 +23,15 @@ public class Customer {
     }
 
     public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
         Iterator<Rental> rentals = this.rentals.iterator();
         Statement statement = new Statement(this.getName());
 
         while (rentals.hasNext()) {
             Rental rental = rentals.next();
-            frequentRenterPoints += rental.getFrequentRenterPoints();
-
             statement.addRental(rental);
-            totalAmount += rental.getPrice();
         }
-        // add footer lines
-        String message = statement.getMessage();
-        message += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        message += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
-        return message;
+
+        return statement.getMessage();
     }
 
 }
