@@ -21,7 +21,7 @@ public class CustomerStatement {
                 .append("\n");
     }
 
-    public String getMessage() {
+    public String build() {
         return message
                 .append(String.format("Amount owed is %,.2f", totalPrice))
                 .append("\n")

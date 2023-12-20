@@ -23,9 +23,9 @@ public class Customer {
     }
 
     public String statement() {
-        CustomerStatement statement = new CustomerStatement(this.getName());
+        CustomerStatement statementBuilder = new CustomerStatement(this.getName());
         rentals.forEach(statement::addRental);
-        return statement.getMessage();
+        return statementBuilder.build();
     }
 
 }
