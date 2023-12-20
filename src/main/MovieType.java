@@ -21,7 +21,10 @@ public enum MovieType {
         private final double basePrice = 3;
 
         public int getFrequentRenterPoints(int daysRented) {
-            return 2;
+            if (daysRented > 1) {
+                return 2;
+            }
+            return 1;
         }
 
         @Override
@@ -43,7 +46,7 @@ public enum MovieType {
             if (daysRented > 3) {
                 price += (daysRented - 1) * this.pricePerExtraDay;
             }
-            return 0;
+            return price;
         }
     };
 

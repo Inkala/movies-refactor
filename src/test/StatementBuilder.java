@@ -40,7 +40,7 @@ public class StatementBuilder {
 	public String build() {
 		String result = "Rental Record for " + customerName + "\n";
 		for (int i = 0; i < movieNames.size(); i++) {
-			result += "\t" + movieNames.get(i) + "\t" + amounts.get(i) + "\n";
+			result += "\t" + movieNames.get(i) + "\t" + amounts.get(i).toString() + "\n";
 		}
 		result += "Amount owed is " + totalAmount + "\n";
 		result += "You earned " + frequentRenterPoints + " frequent renter points";

@@ -112,7 +112,7 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void childrensRental1DayTest() {
+	public void childrenRental1DayTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).movieType(MovieType.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
@@ -127,7 +127,7 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void childrensRental3DayTest() {
+	public void childrenRental3DayTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).movieType(MovieType.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
@@ -142,7 +142,7 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void childrensRental4DayTest() {
+	public void childrenRental4DayTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).movieType(MovieType.CHILDREN).build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
@@ -166,18 +166,18 @@ public class CustomerTest {
 		Movie newReleaseMovie = new MovieBuilder().title(newReleaseMovieName).movieType(MovieType.NEW_RELEASE).build();
 		Rental newReleaseRental = new RentalBuilder().movie(newReleaseMovie).daysRented(10).build();
 
-		String childrensMovieName = "childrensMovieName";
-		Movie childrensMovie = new MovieBuilder().title(childrensMovieName).movieType(MovieType.CHILDREN).build();
-		Rental childrensRental = new RentalBuilder().movie(childrensMovie).daysRented(10).build();
+		String childrenMovieName = "childrenMovieName";
+		Movie childrenMovie = new MovieBuilder().title(childrenMovieName).movieType(MovieType.CHILDREN).build();
+		Rental childrenRental = new RentalBuilder().movie(childrenMovie).daysRented(10).build();
 
 		String customerName = "customerName";
 		Customer customer = new CustomerBuilder().name(customerName).rental(regularRental).rental(newReleaseRental)
-				.rental(childrensRental).build();
+				.rental(childrenRental).build();
 
 		String statement = customer.statement();
 
 		String result = new StatementBuilder().customerName(customerName).movie(regularMovieName, 14)
-				.movie(newReleaseMovieName, 3).movie(childrensMovieName, 15).totalAmount(32).frequentRenterPoints(4).build();
+				.movie(newReleaseMovieName, 3).movie(childrenMovieName, 15).totalAmount(32).frequentRenterPoints(4).build();
 		assertEquals(result, statement);
 	}
 

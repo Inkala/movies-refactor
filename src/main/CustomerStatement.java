@@ -1,7 +1,6 @@
 package main;
 
 public class CustomerStatement {
-
     private final StringBuilder message = new StringBuilder();
     private double totalPrice = 0;
     private int totalFrequentRenterPoints = 0;
@@ -15,17 +14,17 @@ public class CustomerStatement {
     public void addRental(Rental rental) {
         double price = rental.getPrice();
         totalPrice += price;
-        totalFrequentRenterPoints = rental.getFrequentRenterPoints();
+        totalFrequentRenterPoints += rental.getFrequentRenterPoints();
         message
-                .append(String.format("\t%s\t%,.2f", rental.getTitle(), price))
+                .append(String.format("\t%s\t%s", rental.getTitle(), String.valueOf(price)))
                 .append("\n");
     }
 
     public String build() {
         return message
-                .append(String.format("Amount owed is %,.2f", totalPrice))
+                .append(String.format("Amount owed is %s", String.valueOf(totalPrice)))
                 .append("\n")
-                .append(String.format("Amount owed is %d frequent renter points", totalFrequentRenterPoints))
+                .append(String.format("You earned %d frequent renter points", totalFrequentRenterPoints))
                 .toString();
     }
 }
