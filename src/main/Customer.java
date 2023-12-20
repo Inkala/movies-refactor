@@ -23,11 +23,8 @@ public class Customer {
     }
 
     public String statement() {
-        Iterator<Rental> rentals = this.rentals.iterator();
-
         CustomerStatement statement = new CustomerStatement(this.getName());
-        rentals.forEachRemaining(statement::addRental);
-
+        rentals.forEach(statement::addRental);
         return statement.getMessage();
     }
 
