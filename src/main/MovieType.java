@@ -1,9 +1,8 @@
 package main;
 
 public enum MovieType {
-    REGULAR {
-        private double basePrice = 2;
-
+    REGULAR(2, 2) {
+        @Override
         public int getFrequentRenterPoints(int daysRented) {
             return 1;
         }
@@ -11,20 +10,17 @@ public enum MovieType {
         @Override
         public double getPrice(int daysRented) {
             double price = this.basePrice;
-            if (daysRented > 2) {
-                price += (daysRented - 2) * this.pricePerExtraDay;
+            if (hasExtraDays(daysRented)) {
+                price += (daysRented - baseRentedDays) * this.pricePerExtraDay;
             }
             return price;
         }
     },
-    NEW_RELEASE {
-        private final double basePrice = 3;
 
+    NEW_RELEASE(3, 1) {
+        @Override
         public int getFrequentRenterPoints(int daysRented) {
-            if (daysRented > 1) {
-                return 2;
-            }
-            return 1;
+            return hasExtraDays(daysRented) ? 2 : 1;
         }
 
         @Override
@@ -32,9 +28,8 @@ public enum MovieType {
             return this.basePrice;
         }
     },
-    CHILDREN {
-        private final double basePrice = 1.5;
 
+    CHILDREN(1.5, 3) {
         @Override
         public int getFrequentRenterPoints(int daysRented) {
             return 1;
@@ -43,15 +38,27 @@ public enum MovieType {
         @Override
         public double getPrice(int daysRented) {
             double price = this.basePrice;
-            if (daysRented > 3) {
+            if (hasExtraDays(daysRented)) {
                 price += (daysRented - 1) * this.pricePerExtraDay;
             }
             return price;
         }
     };
 
-    protected final double pricePerExtraDay = 1.5;
+    final double basePrice;
+    final double baseRentedDays;
+    final double pricePerExtraDay = 1.5;
+
+    MovieType(double basePrice, int baseRentedDays) {
+        this.basePrice = basePrice;
+        this.baseRentedDays = baseRentedDays;
+    }
+
+    public abstract double getPrice(int daysRented);
 
     public abstract int getFrequentRenterPoints(int daysRented);
-    public abstract double getPrice(int daysRented);
+
+    boolean hasExtraDays(int daysRented) {
+        return daysRented > this.baseRentedDays;
+    }
 }
